@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wxs.oes.mapper.StudentMapper">
+
+    <resultMap id="BaseResultMap" type="com.wxs.oes.domain.Student">
+            <id property="studentid" column="studentId" jdbcType="INTEGER"/>
+            <result property="studentname" column="studentName" jdbcType="VARCHAR"/>
+            <result property="grade" column="grade" jdbcType="VARCHAR"/>
+            <result property="major" column="major" jdbcType="VARCHAR"/>
+            <result property="clazz" column="clazz" jdbcType="VARCHAR"/>
+            <result property="institute" column="institute" jdbcType="VARCHAR"/>
+            <result property="tel" column="tel" jdbcType="VARCHAR"/>
+            <result property="email" column="email" jdbcType="VARCHAR"/>
+            <result property="pwd" column="pwd" jdbcType="VARCHAR"/>
+            <result property="cardid" column="cardId" jdbcType="VARCHAR"/>
+            <result property="sex" column="sex" jdbcType="VARCHAR"/>
+            <result property="role" column="role" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        studentId,studentName,grade,
+        major,clazz,institute,
+        tel,email,pwd,
+        cardId,sex,role
+    </sql>
+</mapper>

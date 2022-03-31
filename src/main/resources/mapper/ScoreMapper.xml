@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wxs.oes.mapper.ScoreMapper">
+
+    <resultMap id="BaseResultMap" type="com.wxs.oes.domain.Score">
+            <id property="scoreid" column="scoreId" jdbcType="INTEGER"/>
+            <result property="examcode" column="examCode" jdbcType="INTEGER"/>
+            <result property="studentid" column="studentId" jdbcType="INTEGER"/>
+            <result property="subject" column="subject" jdbcType="VARCHAR"/>
+            <result property="ptscore" column="ptScore" jdbcType="INTEGER"/>
+            <result property="etscore" column="etScore" jdbcType="INTEGER"/>
+            <result property="score" column="score" jdbcType="INTEGER"/>
+            <result property="answerdate" column="answerDate" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        scoreId,examCode,studentId,
+        subject,ptScore,etScore,
+        score,answerDate
+    </sql>
+</mapper>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wxs.oes.mapper.TeacherMapper">
+
+    <resultMap id="BaseResultMap" type="com.wxs.oes.domain.Teacher">
+            <id property="teacherid" column="teacherId" jdbcType="INTEGER"/>
+            <result property="teachername" column="teacherName" jdbcType="VARCHAR"/>
+            <result property="institute" column="institute" jdbcType="VARCHAR"/>
+            <result property="sex" column="sex" jdbcType="VARCHAR"/>
+            <result property="tel" column="tel" jdbcType="VARCHAR"/>
+            <result property="email" column="email" jdbcType="VARCHAR"/>
+            <result property="pwd" column="pwd" jdbcType="VARCHAR"/>
+            <result property="cardid" column="cardId" jdbcType="VARCHAR"/>
+            <result property="type" column="type" jdbcType="VARCHAR"/>
+            <result property="role" column="role" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        teacherId,teacherName,institute,
+        sex,tel,email,
+        pwd,cardId,type,
+        role
+    </sql>
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wxs.oes.mapper.ExamManageMapper">
+
+    <resultMap id="BaseResultMap" type="com.wxs.oes.domain.ExamManage">
+            <id property="examcode" column="examCode" jdbcType="INTEGER"/>
+            <result property="description" column="description" jdbcType="VARCHAR"/>
+            <result property="source" column="source" jdbcType="VARCHAR"/>
+            <result property="paperid" column="paperId" jdbcType="INTEGER"/>
+            <result property="examdate" column="examDate" jdbcType="VARCHAR"/>
+            <result property="totaltime" column="totalTime" jdbcType="INTEGER"/>
+            <result property="grade" column="grade" jdbcType="VARCHAR"/>
+            <result property="term" column="term" jdbcType="VARCHAR"/>
+            <result property="major" column="major" jdbcType="VARCHAR"/>
+            <result property="institute" column="institute" jdbcType="VARCHAR"/>
+            <result property="totalscore" column="totalScore" jdbcType="INTEGER"/>
+            <result property="type" column="type" jdbcType="VARCHAR"/>
+            <result property="tips" column="tips" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        examCode,description,source,
+        paperId,examDate,totalTime,
+        grade,term,major,
+        institute,totalScore,type,
+        tips
+    </sql>
+</mapper>

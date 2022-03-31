@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wxs.oes.mapper.MultiQuestionMapper">
+
+    <resultMap id="BaseResultMap" type="com.wxs.oes.domain.MultiQuestion">
+            <id property="questionid" column="questionId" jdbcType="INTEGER"/>
+            <result property="subject" column="subject" jdbcType="VARCHAR"/>
+            <result property="question" column="question" jdbcType="VARCHAR"/>
+            <result property="answera" column="answerA" jdbcType="VARCHAR"/>
+            <result property="answerb" column="answerB" jdbcType="VARCHAR"/>
+            <result property="answerc" column="answerC" jdbcType="VARCHAR"/>
+            <result property="answerd" column="answerD" jdbcType="VARCHAR"/>
+            <result property="rightanswer" column="rightAnswer" jdbcType="VARCHAR"/>
+            <result property="analysis" column="analysis" jdbcType="VARCHAR"/>
+            <result property="score" column="score" jdbcType="INTEGER"/>
+            <result property="section" column="section" jdbcType="VARCHAR"/>
+            <result property="level" column="level" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        questionId,subject,question,
+        answerA,answerB,answerC,
+        answerD,rightAnswer,analysis,
+        score,section,level
+    </sql>
+</mapper>

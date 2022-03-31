@@ -1,0 +1,13 @@
+package com.wxs.oes.service;
+
+import com.wxs.oes.domain.Replay;
+import com.baomidou.mybatisplus.extension.service.IService;
+
+/**
+* @author Adolph
+* @description 针对表【replay(回复表)】的数据库操作Service
+* @createDate 2022-03-31 14:18:15
+*/
+public interface ReplayService extends IService<Replay> {
+
+}
