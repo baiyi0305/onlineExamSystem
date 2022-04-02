@@ -1,5 +1,6 @@
 package com.wxs.oes.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.wxs.oes.domain.ExamManage;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -9,5 +10,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 * @createDate 2022-03-31 14:18:15
 */
 public interface ExamManageService extends IService<ExamManage> {
+
+    IPage<ExamManage> getAllExam(Integer pageCurrent, Integer pageSize);
 
 }

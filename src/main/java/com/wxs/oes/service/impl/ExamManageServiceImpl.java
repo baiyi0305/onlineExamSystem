@@ -1,9 +1,12 @@
 package com.wxs.oes.service.impl;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.wxs.oes.domain.ExamManage;
 import com.wxs.oes.service.ExamManageService;
 import com.wxs.oes.mapper.ExamManageMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,6 +18,14 @@ import org.springframework.stereotype.Service;
 public class ExamManageServiceImpl extends ServiceImpl<ExamManageMapper, ExamManage>
     implements ExamManageService{
 
+    @Autowired
+    ExamManageMapper examManageMapper;
+
+    @Override
+    public IPage<ExamManage> getAllExam(Integer pageCurrent, Integer pageSize) {
+        IPage<ExamManage> page = new Page<>(pageCurrent,pageSize);
+        return examManageMapper.selectPage(page, null);
+    }
 }
 
 

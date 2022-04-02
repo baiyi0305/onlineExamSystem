@@ -1,6 +1,7 @@
 package com.wxs.oes.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -40,16 +41,19 @@ public class ExamManage implements Serializable {
     /**
      * 试卷编号
      */
+    @TableField(value = "paperId")
     private Integer paperId;
 
     /**
      * 考试日期
      */
+    @TableField(value = "examDate")
     private String examDate;
 
     /**
      * 持续时长
      */
+    @TableField(value = "totalTime")
     private Integer totalTime;
 
     /**
@@ -75,6 +79,7 @@ public class ExamManage implements Serializable {
     /**
      * 总分
      */
+    @TableField(value = "totalScore")
     private Integer totalScore;
 
     /**
