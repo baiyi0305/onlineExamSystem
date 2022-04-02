@@ -29,10 +29,25 @@ public class ExamManageController {
     @Autowired
     ExamManageService examManageService;
 
+    @RequestMapping("/exams")
+    public R<List<ExamManage>> getAllExam(){
+        List<ExamManage> examManages = examManageService.getAllExam();
+        if (examManages == null){
+            return new R<>(500,"没有考试",null);
+        }
+        return new R<>(200,"加载成功",examManages);
+    }
+
+    /**
+     * 分页查询考试管理表
+     * @param pageCurrent 当前第几页
+     * @param pageSize 每页几条数据
+     * @return
+     */
     @RequestMapping("/exams/{pageCurrent}/{pageSize}")
-    public R<IPage<ExamManage>> getAllExam(@PathVariable("pageCurrent") Integer pageCurrent,
+    public R<IPage<ExamManage>> getAllExamByPage(@PathVariable("pageCurrent") Integer pageCurrent,
                                 @PathVariable("pageSize") Integer pageSize){
-        IPage<ExamManage> examManages = examManageService.getAllExam(pageCurrent,pageSize);
+        IPage<ExamManage> examManages = examManageService.getAllExamByPage(pageCurrent,pageSize);
         if (examManages == null){
             return new R<>(500,"请求失败",null);
         }

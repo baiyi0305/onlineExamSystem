@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.wxs.oes.domain.ExamManage;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 /**
 * @author Adolph
 * @description 针对表【exam_manage(考试管理表)】的数据库操作Service
@@ -11,6 +13,17 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface ExamManageService extends IService<ExamManage> {
 
-    IPage<ExamManage> getAllExam(Integer pageCurrent, Integer pageSize);
+    /**
+     * 获取所有试管理表数据
+     * @return
+     */
+    List<ExamManage> getAllExam();
 
+    /**
+     * 获取所有试管理表数据
+     * @param pageCurrent 当前页
+     * @param pageSize 每一页几条数据
+     * @return
+     */
+    IPage<ExamManage> getAllExamByPage(Integer pageCurrent, Integer pageSize);
 }

@@ -9,6 +9,8 @@ import com.wxs.oes.mapper.ExamManageMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
 * @author Adolph
 * @description 针对表【exam_manage(考试管理表)】的数据库操作Service实现
@@ -22,7 +24,12 @@ public class ExamManageServiceImpl extends ServiceImpl<ExamManageMapper, ExamMan
     ExamManageMapper examManageMapper;
 
     @Override
-    public IPage<ExamManage> getAllExam(Integer pageCurrent, Integer pageSize) {
+    public List<ExamManage> getAllExam() {
+        return examManageMapper.selectList(null);
+    }
+
+    @Override
+    public IPage<ExamManage> getAllExamByPage(Integer pageCurrent, Integer pageSize) {
         IPage<ExamManage> page = new Page<>(pageCurrent,pageSize);
         return examManageMapper.selectPage(page, null);
     }

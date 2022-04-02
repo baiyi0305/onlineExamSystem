@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @author:Adolph
+ * mybatis_plus分页插件
  */
 @Configuration
 @MapperScan("com.wxs.oes.mapper")
