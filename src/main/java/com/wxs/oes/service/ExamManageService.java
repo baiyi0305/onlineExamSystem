@@ -16,8 +16,10 @@ public interface ExamManageService extends IService<ExamManage> {
     /**
      * 获取所有试管理表数据
      * @return
+ //    * @param key
      */
-    List<ExamManage> getAllExam();
+    List<ExamManage> getAllExam(String key);
+    //List<ExamManage> getAllExam();
 
     /**
      * 获取所有试管理表数据
@@ -26,4 +28,6 @@ public interface ExamManageService extends IService<ExamManage> {
      * @return
      */
     IPage<ExamManage> getAllExamByPage(Integer pageCurrent, Integer pageSize);
+
+
 }

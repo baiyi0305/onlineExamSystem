@@ -1,5 +1,6 @@
 package com.wxs.oes.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -24,8 +25,10 @@ public class ExamManageServiceImpl extends ServiceImpl<ExamManageMapper, ExamMan
     ExamManageMapper examManageMapper;
 
     @Override
-    public List<ExamManage> getAllExam() {
-        return examManageMapper.selectList(null);
+    public List<ExamManage> getAllExam(String key) {
+            QueryWrapper<ExamManage> wrapper = new QueryWrapper<ExamManage>().like("source", key);
+            return examManageMapper.selectList(wrapper);
+
     }
 
     @Override
@@ -33,6 +36,7 @@ public class ExamManageServiceImpl extends ServiceImpl<ExamManageMapper, ExamMan
         IPage<ExamManage> page = new Page<>(pageCurrent,pageSize);
         return examManageMapper.selectPage(page, null);
     }
+
 }
 
 

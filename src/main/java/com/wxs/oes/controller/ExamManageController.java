@@ -2,15 +2,13 @@ package com.wxs.oes.controller;
 
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.wxs.oes.domain.ExamManage;
 import com.wxs.oes.service.ExamManageService;
+import com.wxs.oes.utils.PageParams;
 import com.wxs.oes.utils.R;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,13 +27,25 @@ public class ExamManageController {
     @Autowired
     ExamManageService examManageService;
 
-    @RequestMapping("/exams")
-    public R<List<ExamManage>> getAllExam(){
-        List<ExamManage> examManages = examManageService.getAllExam();
-        if (examManages == null){
+    /**
+     * 试卷检索
+     * @param key 试卷关键字
+     * @return
+     */
+    @GetMapping("/exams")
+    public R<List<ExamManage>> getAllExam(String key){
+        if (StringUtils.isNotEmpty(key)){
+            List<ExamManage> examManages = examManageService.getAllExam(key);
+            if (examManages == null){
+                return new R<>(500,"没有考试",null);
+            }
+            return new R<>(200,"加载成功",examManages);
+        }
+        List<ExamManage> allExamByPage = examManageService.getAllExamByPage(PageParams.pageCurrent, PageParams.pageSize).getRecords();
+        if (allExamByPage == null){
             return new R<>(500,"没有考试",null);
         }
-        return new R<>(200,"加载成功",examManages);
+        return new R<>(200,"加载成功",allExamByPage);
     }
 
     /**
@@ -44,7 +54,7 @@ public class ExamManageController {
      * @param pageSize 每页几条数据
      * @return
      */
-    @RequestMapping("/exams/{pageCurrent}/{pageSize}")
+    @GetMapping("/exams/{pageCurrent}/{pageSize}")
     public R<IPage<ExamManage>> getAllExamByPage(@PathVariable("pageCurrent") Integer pageCurrent,
                                 @PathVariable("pageSize") Integer pageSize){
         IPage<ExamManage> examManages = examManageService.getAllExamByPage(pageCurrent,pageSize);

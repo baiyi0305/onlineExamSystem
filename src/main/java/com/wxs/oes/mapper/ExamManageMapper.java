@@ -4,6 +4,8 @@ import com.wxs.oes.domain.ExamManage;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
 * @author Adolph
 * @description 针对表【exam_manage(考试管理表)】的数据库操作Mapper
