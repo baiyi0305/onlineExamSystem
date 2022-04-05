@@ -1,5 +1,6 @@
 package com.wxs.oes.domain;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
@@ -22,15 +23,18 @@ public class PaperManage implements Serializable {
     /**
      * 试卷编号
      */
+    @TableField(value = "paperId")
     private Integer paperId;
 
     /**
      * 题目类型
      */
+    @TableField(value = "questionType")
     private Integer questionType;
 
     /**
      * 题目编号
      */
+    @TableField(value = "questionId")
     private Integer questionId;
 }

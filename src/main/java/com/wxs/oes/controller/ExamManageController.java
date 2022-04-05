@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.wxs.oes.domain.ExamManage;
 import com.wxs.oes.service.ExamManageService;
-import com.wxs.oes.utils.PageParams;
+import com.wxs.oes.constant.PageParams;
 import com.wxs.oes.utils.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,6 +26,20 @@ public class ExamManageController {
 
     @Autowired
     ExamManageService examManageService;
+
+    /**
+     * 通过examCode获取试卷的信息
+     * @param examCode
+     * @return
+     */
+    @GetMapping("/exam/{examCode}")
+    public R<ExamManage> getExamDetail(@PathVariable("examCode") Integer examCode){
+        ExamManage examManage = examManageService.getExamByExamCode(examCode);
+        if (examManage == null){
+            return new R<>(500,"请求失败",null);
+        }
+        return new R<>(200,"请求成功",examManage);
+    }
 
     /**
      * 试卷检索

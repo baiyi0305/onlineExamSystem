@@ -1,4 +1,4 @@
-package com.wxs.oes.utils;
+package com.wxs.oes.constant;
 
 /**
  * @author:Adolph

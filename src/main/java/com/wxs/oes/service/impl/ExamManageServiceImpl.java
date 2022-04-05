@@ -37,6 +37,11 @@ public class ExamManageServiceImpl extends ServiceImpl<ExamManageMapper, ExamMan
         return examManageMapper.selectPage(page, null);
     }
 
+    @Override
+    public ExamManage getExamByExamCode(Integer examCode) {
+        return examManageMapper.selectById(examCode);
+    }
+
 }
 
 

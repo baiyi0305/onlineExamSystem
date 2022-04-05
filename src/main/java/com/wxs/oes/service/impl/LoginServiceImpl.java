@@ -36,7 +36,7 @@ public class LoginServiceImpl extends ServiceImpl<LoginMapper, Login>
     TeacherMapper teacherMapper;
 
     @Override
-    public R<Object> login(Login login) {
+    public R<?> login(Login login) {
         String username = login.getUsername();
         String password = login.getPassword();
         Admin admin = adminMapper.selectOne(new QueryWrapper<Admin>().eq("adminId", username)

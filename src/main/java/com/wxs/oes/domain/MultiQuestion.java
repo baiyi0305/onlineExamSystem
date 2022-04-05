@@ -1,6 +1,7 @@
 package com.wxs.oes.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -40,26 +41,31 @@ public class MultiQuestion implements Serializable {
     /**
      * 选项A
      */
+    @TableField(value = "answerA")
     private String answerA;
 
     /**
      * 选项B
      */
+    @TableField(value = "answerB")
     private String answerB;
 
     /**
      * 选项C
      */
+    @TableField(value = "answerC")
     private String answerC;
 
     /**
      * 选项D
      */
+    @TableField(value = "answerD")
     private String answerD;
 
     /**
      * 正确答案
      */
+    @TableField(value = "rightAnswer")
     private String rightAnswer;
 
     /**

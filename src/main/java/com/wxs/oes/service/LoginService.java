@@ -8,6 +8,6 @@ import com.wxs.oes.utils.R;
  * @author:Adolph
  */
 public interface LoginService extends IService<Login> {
-    R<Object> login(Login login);
+    R<?> login(Login login);
 
 }

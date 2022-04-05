@@ -22,7 +22,7 @@ public class LoginController {
      * @return
      */
     @PostMapping("/login")
-    public R<Object> login(@RequestBody Login login){
+    public R<?> login(@RequestBody Login login){
         return loginService.login(login);
     }
 
